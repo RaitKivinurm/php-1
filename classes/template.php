@@ -44,7 +44,6 @@ class template
 			echo 'Ei saanud lugeda faili '.$this->file.'.<br/>';
 			exit;
 		}
-
 	}// loadFile
 	function readFile($f){
 		$this->content = file_get_contents($f);
