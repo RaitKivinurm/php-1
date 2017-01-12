@@ -25,5 +25,10 @@ $tmpl->loadFile();
 echo '<pre>';
 print_r($tmpl);
 echo '</pre>';
+echo '<hr/>';
+$main = new template('main.html');
+echo '<pre>';
+print_r($main);
+echo '</pre>';
 
 ?>
