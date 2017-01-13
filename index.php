@@ -25,5 +25,7 @@ echo '<pre>';
 print_r($tmpl);
 echo '</pre>';
 
+echo $tmpl->parse();
+
 
 ?>
