@@ -6,6 +6,10 @@
  * Date: 18.01.2017
  * Time: 8:48
  */
+// useful function for this class
+function fixUrl($val){
+	return urlencode($val);
+}// fixUrl
 // only for testing
 // import http class
 require_once 'http.php';
@@ -24,4 +28,10 @@ class linkobject extends http
 		parent::__construct();
 		$this->baseUrl = $this->protocol.HTTP_HOST.SCRIPT_NAME;
 	}// construct
+	// create http data pairs and merge them
+	function addToLink($link, $name, $val){
+		// create pair: element_name=element_value
+		$link = $link.fixUrl($name).$this->eq.fixUrl($val);
+		echo $link;
+	}// addTo Link
 }// class end
