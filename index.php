@@ -62,4 +62,8 @@ echo '</pre>';*/
 // control link creation
 $link = $http->getLink(array('kasutaja'=>'anna', 'parool'=>'qwerty'));
 //echo $link.'<br />';
+// control http output
+echo '<pre>';
+print_r($http);
+echo '</pre>';
 ?>
