@@ -14,10 +14,11 @@ if(file_exists($fn) and is_file($fn) and is_readable($fn)){
 	// import act file
 	require_once $fn;
 } else {
-	// use default act
 	// define default act file path
-	$fn = ACTS_DIR.DEFAULT.'.php';
+	$fn = ACTS_DIR.DEFAULT_ACT.'.php';
 	// define new value for act element in url
-	$http->set('act', )
+	$http->set('act', DEFAULT_ACT);
+	// use default act
+	require_once $fn;
 }
 ?>
