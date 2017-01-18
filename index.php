@@ -20,7 +20,16 @@ $tmpl = new template('main');
 $tmpl->set('style', STYLE_DIR.'main'.'.css');
 
 $tmpl->set('header', 'minu lehe pealkiri');
-$tmpl->set('menu', 'minu menüü');
+// import http class
+require_once CLASSES_DIR.'http.php';
+// import linkobject class
+require_once CLASSES_DIR.'linkobject.php';
+// create and output http object from linkobject class
+$http = new linkobject();
+// control menu
+// import menu file
+require_once 'menu.php';
+$tmpl->set('menu', $menu->parse());
 $tmpl->set('nav_bar', 'minu navigatsioon');
 $tmpl->set('lang_bar', 'minu keeleriba');
 $tmpl->set('content', 'minu sisu');
@@ -32,16 +41,11 @@ echo '</pre>';
 */
 // output template content set up with real values
 echo $tmpl->parse();
-// import http class
-require_once CLASSES_DIR.'http.php';
-// import linkobject class
-require_once CLASSES_DIR.'linkobject.php';
-// create and output http object from linkobject class
-$http = new linkobject();
+
 // control http object output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http);
-echo '</pre>';
+echo '</pre>';*/
 // control http constants
 echo REMOTE_ADDR.'<br />';
 echo PHP_SELF.'<br />';
@@ -52,13 +56,10 @@ echo '<hr />';
 $http->set('kasutaja', 'Anna');
 $http->set('tund', 'php programmeerimisvahendid');
 // control $http->vars object output
-echo '<pre>';
+/*echo '<pre>';
 print_r($http->vars);
-echo '</pre>';
+echo '</pre>';*/
 // control link creation
 $link = $http->getLink(array('kasutaja'=>'anna', 'parool'=>'qwerty'));
-echo $link.'<br />';
-// control menu
-// import menu file
-require_once 'menu.php';
+//echo $link.'<br />';
 ?>

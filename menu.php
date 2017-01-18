@@ -34,13 +34,13 @@ $item->set('link', $link);
 print_r($item);
 echo '</pre>';*/
 // add menu item to menu
-$menu->set('items', $item->parse());
+$menu->add('items', $item->parse()); // add another item to menu
 // menu item creation - end
 //
 // control created menu output
-echo '<pre>';
+/*echo '<pre>';
 print_r($menu);
-echo '</pre>';
+echo '</pre>';*/
 // output menu
-echo $menu->parse();
+//echo $menu->parse();
 ?>
