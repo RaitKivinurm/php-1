@@ -18,8 +18,10 @@ require_once CLASSES_DIR.'http.php'; // import http class
 require_once CLASSES_DIR.'linkobject.php'; // import linkobject class
 require_once CLASSES_DIR.'mysql.php'; // import database class
 
+require_once 'db_conf.php'; // import database configuration
+
 // create and output http object from linkobject class
 $http = new linkobject();
 // create database object
-$db = new mysql('localhost', 'user', 'parool', 'dbname');
+$db = new mysql(DBHOST,DBUSER,DBPASS,DBNAME);
 ?>
