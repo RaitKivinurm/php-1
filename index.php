@@ -31,7 +31,7 @@ echo $tmpl->parse();
 require_once 'act.php';
 // control database object
 // create test query
-$sql = 'SELECT NOW();';
+$sql = 'SELECT NOW;';
 $res = $db->query($sql);
 // control database query result
 echo '<pre>';
