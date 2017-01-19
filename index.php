@@ -37,5 +37,8 @@ $res = $db->getArray($sql);
 echo '<pre>';
 print_r($res);
 echo '</pre>';
-$db->getMicrotime();
+// query time control
+echo '<pre>';
+print_r($db->history);
+echo '</pre>';
 ?>
